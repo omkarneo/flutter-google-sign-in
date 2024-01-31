@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   alreadySigin() async {
-    GoogleSignIn().disconnect();
+    // GoogleSignIn().disconnect();
     return await FirebaseAuth.instance.signOut();
   }
 

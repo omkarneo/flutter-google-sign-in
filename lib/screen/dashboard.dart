@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class DashBoardScreen extends StatefulWidget {
   final UserCredential userData;
@@ -31,6 +32,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           IconButton(
               onPressed: () async {
                 bool signout = await signOutFromGoogle();
+                GoogleSignIn().disconnect();
                 if (signout) {
                   Navigator.pop(context);
                 }
